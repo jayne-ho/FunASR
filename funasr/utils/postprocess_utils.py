@@ -6,7 +6,7 @@ from typing import Any, List, Union
 
 
 def isChinese(ch: str):
-    if '\u4e00' <= ch <= '\u9fff' or '\u0030' <= ch <= '\u0039' or ch == '@':
+    if '\u4e00' <= ch <= '\u9fff' or '\u0030' <= ch <= '\u0039':
         return True
     return False
 
