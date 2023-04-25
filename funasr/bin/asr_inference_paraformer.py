@@ -210,7 +210,8 @@ class Speech2Text:
             speech = torch.tensor(speech)
 
         if self.frontend is not None:
-            feats, feats_len = self.frontend.forward(speech, speech_lengths)
+            #feats, feats_len = self.frontend.forward(speech, speech_lengths)
+            feats, feats_len = self.frontend.forward(speech.to(self.device), speech_lengths.to(self.device))
             feats = to_device(feats, device=self.device)
             feats_len = feats_len.int()
             self.asr_model.frontend = None
